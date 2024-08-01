@@ -302,13 +302,17 @@ autoip_network_changed_link_up(struct netif *netif)
 {
   struct autoip *autoip = netif_autoip_data(netif);
 
-  if (autoip && (autoip->state != AUTOIP_STATE_OFF) && !LWIP_DHCP_AUTOIP_COOP) {
-    LWIP_DEBUGF(AUTOIP_DEBUG | LWIP_DBG_TRACE,
-                ("autoip_network_changed_link_up(): start acd\n"));
-    autoip->state = AUTOIP_STATE_CHECKING;
-    /* Start acd check again for the last used address */
-    acd_start(netif, &autoip->acd, autoip->llipaddr);
-  }
+  if (autoip && (autoip->state != AUTOIP_STATE_OFF)) {
+     #ifdef LWIP_DHCP_COOP
+     #if !LWIP_DHCP_COOP
+         LWIP_DEBUGF(AUTOIP_DEBUG | LWIP_DBG_TRACE,
+                 ("autoip_network_changed_link_up(): start acd\n"));
+         autoip->state = AUTOIP_STATE_CHECKING;
+         /* Start acd check again for the last used address */
+         acd_start(netif, &autoip->acd, autoip->llipaddr);
+     #endif
+     #endif
+    }
 }
 
 /**
@@ -323,11 +327,15 @@ autoip_network_changed_link_down(struct netif *netif)
 {
   struct autoip *autoip = netif_autoip_data(netif);
 
-  if (autoip && (autoip->state != AUTOIP_STATE_OFF) && LWIP_DHCP_AUTOIP_COOP) {
-    LWIP_DEBUGF(AUTOIP_DEBUG | LWIP_DBG_TRACE,
-                ("autoip_network_changed_link_down(): stop autoip\n"));
-    autoip_stop(netif);
-  }
+  if (autoip && (autoip->state != AUTOIP_STATE_OFF)) {
+     #ifdef LWIP_DHCP_AUTOIP_COOP
+     #if LWIP_DHCP_AUTOIP_COOP
+         LWIP_DEBUGF(AUTOIP_DEBUG | LWIP_DBG_TRACE,
+                 ("autoip_network_changed_link_down(): stop autoip\n"));
+         autoip_stop(netif);
+     #endif
+     #endif
+    }
 }
 
 /**
