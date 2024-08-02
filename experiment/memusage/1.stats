@@ -1,0 +1,116 @@
+Starting lwIP, local interface IP is 192.168.1.200
+status_callback==UP, local interface IP is 192.168.1.200
+
+MEM HEAP
+	avail: 10240
+	used: 20
+	max: 20
+	err: 0
+
+MEM RAW_PCB
+	avail: 3
+	used: 0
+	max: 0
+	err: 0
+
+MEM UDP_PCB
+	avail: 8
+	used: 0
+	max: 0
+	err: 0
+
+MEM TCP_PCB
+	avail: 5
+	used: 0
+	max: 0
+	err: 0
+
+MEM TCP_PCB_LISTEN
+	avail: 8
+	used: 0
+	max: 0
+	err: 0
+
+MEM TCP_SEG
+	avail: 16
+	used: 0
+	max: 0
+	err: 0
+
+MEM ALTCP_PCB
+	avail: 5
+	used: 0
+	max: 0
+	err: 0
+
+MEM REASSDATA
+	avail: 60
+	used: 0
+	max: 0
+	err: 0
+
+MEM FRAG_PBUF
+	avail: 15
+	used: 0
+	max: 0
+	err: 0
+
+MEM NETBUF
+	avail: 2
+	used: 0
+	max: 0
+	err: 0
+
+MEM NETCONN
+	avail: 12
+	used: 0
+	max: 0
+	err: 0
+
+MEM TCPIP_MSG_API
+	avail: 16
+	used: 0
+	max: 0
+	err: 0
+
+MEM TCPIP_MSG_INPKT
+	avail: 16
+	used: 1
+	max: 16
+	err: 37134
+
+MEM ARP_QUEUE
+	avail: 30
+	used: 0
+	max: 0
+	err: 0
+
+MEM IGMP_GROUP
+	avail: 8
+	used: 1
+	max: 1
+	err: 0
+
+MEM SYS_TIMEOUT
+	avail: 17
+	used: 4
+	max: 4
+	err: 0
+
+MEM NETDB
+	avail: 1
+	used: 0
+	max: 0
+	err: 0
+
+MEM PBUF_REF/ROM
+	avail: 16
+	used: 0
+	max: 0
+	err: 0
+
+MEM PBUF_POOL
+	avail: 120
+	used: 1
+	max: 18
+	err: 0
